@@ -1,0 +1,8 @@
+CREATE TABLE personnetbl(
+    id INT NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(40) NOT NULL,
+    mail VARCHAR(100) NOT NULL,
+    addrmac VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+    );
