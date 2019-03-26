@@ -1,19 +1,13 @@
-#!/usr/bin/python
 # file: rfcomm-server.py
 # auth: Albert Huang <albert@csail.mit.edu>
 # desc: simple demonstration of a server application that uses RFCOMM sockets
 #
 # $Id: rfcomm-server.py 518 2007-08-10 07:20:07Z albert $
 
-#import serial
-#import time
-
+import subprocess
+from test import *
 from bluetooth import *
 
-
-#initialisation serial arduino
-
-#ser = serial.Serial('/dev/ttyAMA0',9600)
 
 server_sock=BluetoothSocket( RFCOMM )
 server_sock.bind(("",PORT_ANY))
@@ -40,8 +34,9 @@ try:
         data = client_sock.recv(1024)
         if len(data) == 0: break
         print "received [%s]" % data
-	#ser.write(data)
-
+        if len(data) !=0:
+            #subprocess.call("start python /home/pi/Documents/projetInnovant/helloWorld.py")
+            print(passe(data))
 except IOError:
     pass
 
